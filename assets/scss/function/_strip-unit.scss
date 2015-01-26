@@ -1,0 +1,16 @@
+// -------------------------------------------------------------------------
+// Strip Unit
+// http://stackoverflow.com/a/12335841/673457
+// -------------------------------------------------------------------------
+
+@function strip($val) {
+  // Make sure $val is a number first
+  @if type-of($val) == 'number' {
+    @return ($val / ($val * 0 + 1));
+  }
+  // Return same value otherwise
+  @else {
+    @warn "Cannot strip units as value is not a number: #{$val}";
+    @return $val;
+  }
+}

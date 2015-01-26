@@ -1,0 +1,74 @@
+@import "lib/bourbon/bourbon";
+@import "lib/neat/neat";
+@import "lib/normalize";
+@import "lib/color-me-sass/color-me-sass";
+
+@import "base/fonts";
+@import "function/strip-unit";
+
+@import "mixins/clearfix";
+@import "mixins/mq";
+@import "mixins/visuallyhidden";
+
+body {
+  background-repeat: repeat;
+  background-color: #f2f2f2;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#main { 
+  @include clearfix;
+  font-family: $oxygen;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+.name {}
+.title {
+  font-size: 15px;
+}
+
+.AccountLinks {
+  margin: 0;
+  padding: 0;
+
+  li {
+    display: inline-block;
+    padding: 0;
+  }
+
+  a {
+    &:hover {
+      opacity: .7;
+    }
+  }
+
+  .icon {
+    fill: black;
+    height: 60px;
+    width: 60px;
+
+    @include mq(450px) {
+      height: 30px;
+      width: 30px;
+    }
+  }
+}
+
+.icon {
+  &.github {
+    fill: #333;
+  }
+  &.twitter {
+    fill: colorMe("blueTwitter");
+  }
+  &.linkedin {
+    fill: colorMe("blueLinkedIn");
+  }
+}
